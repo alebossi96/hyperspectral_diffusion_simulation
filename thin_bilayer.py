@@ -27,15 +27,9 @@ def phi(rho, z, mu_a, mu_sp, s, ni, ne = 1,  m_limit=100):
     
     return phi_value / (4 * np.pi * D)
 
-# Example usage
-rho = 1.0
-z = 1.0
-mu_eff = 1.0
-D = 1.0
-s = 1.0
-z_e = 1.0
-z_s = 1.0
+
 
 result = phi(rho, z, mu_a, mu_sp, s, ni, ne = 1,  m_limit=100)
-print(result)
-
+def thin_layer_absorber(th, mu_a)
+    return np.exp(-mu_a*th)
+final_fluence = result*thin_layer_absorber(th, mu_a)
