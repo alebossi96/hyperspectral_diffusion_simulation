@@ -82,13 +82,13 @@ def z_average(mu_s, mu_a):
     z_mean_mu_s[:5] = 0 #correzione per early photons ad minchiam
     phi = diff_eq_slab(t, 0, mu_s = mu_s, mu_a = mu_a)
     return np.sum(z_mean_mu_s*phi/np.sum(phi))
-    
-for j in range(3,10, 2):
-    print(j)
-    z_averages = []
-    for i in range(0,200, 10):
-        z_avg = z_average(mu_s= j, mu_a= i/100)
-        z_averages.append(z_avg)
-    plt.plot(np.arange(0,200, 10)/100,z_averages)
-plt.show()
+if __name__== "__main__":    
+    for j in range(3,10, 2):
+        print(j)
+        z_averages = []
+        for i in range(0,200, 10):
+            z_avg = z_average(mu_s= j, mu_a= i/100)
+            z_averages.append(z_avg)
+        plt.plot(np.arange(0,200, 10)/100,z_averages)
+    plt.show()
 
