@@ -58,5 +58,6 @@ def reflectance_hyperspectral(mu_a, mu_sp, s, ni, ne = 1,  m_limit=100):
 def thin_layer_absorber(th, mu_a):
     #*2 because it needs to pass through the skin 2 times
     return np.exp(-mu_a*2*th)
-#final_fluence = result*thin_layer_absorber(th, mu_a)
-reflectance_hyperspectral(mu_a = 0.1, mu_sp  = 10, s = 10, ni = 1.4, ne = 1,  m_limit=100)
+#
+result = reflectance_hyperspectral(mu_a = 0.1, mu_sp  = 10, s = 10, ni = 1.4, ne = 1,  m_limit=100)
+final_fluence = result*thin_layer_absorber(th, mu_a)
